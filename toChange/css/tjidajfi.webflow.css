@@ -148,6 +148,7 @@ a {
 }
 
 .section.no-margin-top {
+  background-image: url('../images/chartgetalgoIndicator.png');
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1408,7 +1409,9 @@ a {
   right: 0%;
 }
 
-
+.hero-background-image.projects {
+  background-image: url('../images/slider-3.jpg');
+}
 
 .display-heading-white {
   color: #fff;
