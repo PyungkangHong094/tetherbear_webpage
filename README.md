@@ -33,6 +33,65 @@ tetherbear_webpage/
 └── package.json
 ```
 
+**⚠️ 중요: 프로젝트 루트 폴더(`tetherbear_webpage`)에서 실행해야 합니다!**
+
+```bash
+npm install
+```
+
+> 📌 `package.json` 파일이 있는 디렉토리에서 실행하세요.
+
+### 3️⃣ 개발 서버 실행
+
+**프로젝트 루트 폴더에서 실행:**
+
+```bash
+npm start
+```
+
+> 💡 **주의**: 이 프로젝트는 `npm run dev`가 **아닌** `npm start` 명령어를 사용합니다!
+
+**실행 후:**
+- 브라우저가 자동으로 열립니다
+- 주소: [http://localhost:3000](http://localhost:3000)
+- 파일 변경 시 자동으로 새로고침됩니다
+- 콘솔에서 lint 에러를 확인할 수 있습니다
+
+### 4️⃣ 프로덕션 빌드 (배포용)
+
+```bash
+npm run build
+```
+
+- 최적화된 빌드 파일이 `build` 폴더에 생성됩니다
+- 파일이 압축되고 해시가 추가됩니다
+
+### 5️⃣ 테스트 실행 (선택사항)
+
+```bash
+npm test
+```
+
+대화형 watch 모드로 테스트 러너를 실행합니다.
+
+---
+
+## 🎯 빠른 시작 요약
+
+```bash
+# 1. 프로젝트 폴더로 이동
+cd tetherbear_webpage
+
+# 2. 의존성 설치 (처음 한 번만)
+npm install
+
+# 3. 개발 서버 실행
+npm start
+
+# ✅ 브라우저에서 http://localhost:3000 자동 열림
+```
+
+
 ## ⚠️ 알려진 이슈 및 수정 필요 사항
 
 ### 1. Home 페이지 화살표 버튼 애니메이션 미구현
