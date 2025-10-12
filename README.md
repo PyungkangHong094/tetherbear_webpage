@@ -1,7 +1,40 @@
-# tetherbear
+# Tether Bear Webpage
 
-HTML/CSS/JS
-→ react
-→ next.js 이동하는 작업
+> Stock, Crypto & Forex Smart Indicators 웹사이트
 
-Deadline 2025 10 20
+## Project Overview
+
+HTML/CSS/JS -> next.js framework.
+
+## Project Structure
+
+```
+tetherbear_webpage/
+├── index.html              # Original main page (source)
+├── product.html            # Original product page (source)
+├── css/                    # Original css
+├── js/                     # Original JavaScript
+├── htmltoreact-react/      # React Version 
+├── htmltoreact-nextjs/     # Next.js Version 
+└── README.md             
+```
+
+## Getting Started
+
+### Run the React App
+```bash
+cd htmltoreact-react
+npm install
+npm start
+```
+
+### Run the Next.js App
+```bash
+cd htmltoreact-nextjs
+npm install
+npm run dev
+```
+
+## Development Timeline
+
+- **Deadlilne**: Oct 20, 2025
