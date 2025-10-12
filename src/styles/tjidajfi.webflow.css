@@ -1408,6 +1408,9 @@ a {
   right: 0%;
 }
 
+.hero-background-image.projects {
+  background-image: url('/public/images/slider-3.jpg');
+}
 
 
 .display-heading-white {

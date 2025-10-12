@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# TetherBear Webpage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TetherBear의 공식 웹사이트 프로젝트입니다. 기존 HTML/CSS/JavaScript로 작성된 정적 웹사이트를 React 기반의 SPA(Single Page Application)로 마이그레이션했습니다.
 
-## Available Scripts
+## 🚀 프로젝트 개요
 
-In the project directory, you can run:
+이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)을 기반으로 제작되었으며, Webflow로 디자인된 웹사이트를 React 컴포넌트로 변환한 프로젝트입니다.
 
-### `npm start`
+### 주요 변경사항
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ✅ **HTML → React 컴포넌트 변환**: 정적 HTML 파일을 재사용 가능한 React 컴포넌트로 전환
+- ✅ **라우팅 구현**: React Router를 사용한 SPA 라우팅 시스템 구축
+- ✅ **JSX 문법 수정**: `className`, `style` 객체, 자체 닫힘 태그 등 JSX 문법에 맞게 변환
+- ✅ **컴포넌트 구조화**: Home 및 Product 페이지를 독립적인 컴포넌트로 분리
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 프로젝트 구조
 
-### `npm test`
+```
+tetherbear_webpage/
+├── public/
+│   ├── index.html          # React 앱의 진입점
+│   ├── webflow.js          # Webflow 라이브러리 (현재 사용하지 않음)
+│   └── images/             # 이미지 리소스
+├── src/
+│   ├── components/
+│   │   ├── Home.jsx        # 홈페이지 컴포넌트
+│   │   └── Product.jsx     # 제품 소개 페이지 컴포넌트
+│   ├── styles/
+│   │   ├── webflow.css     # Webflow 기본 스타일
+│   │   ├── tjidajfi.webflow.css  # 커스텀 Webflow 스타일
+│   ├── App.js              # 메인 앱 컴포넌트 (라우팅 설정)
+│   └── index.js            # React 앱 엔트리 포인트
+└── package.json
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚠️ 알려진 이슈 및 수정 필요 사항
 
-### `npm run build`
+### 1. Home 페이지 화살표 버튼 애니메이션 미구현
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**현상**: 홈페이지의 화살표 버튼 애니메이션이 작동하지 않음
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**원인**: Webflow의 애니메이션 라이브러리(`webflow.js`)가 React 환경에서 호환되지 않음
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**해결 방법**:
+- React 기반 애니메이션 라이브러리로 재구현 필요
+- 추천 라이브러리: `framer-motion`, `react-spring`, `GSAP`
 
-### `npm run eject`
+```jsx
+// 예시: framer-motion 사용
+import { motion } from 'framer-motion';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<motion.div
+  animate={{ y: [0, 10, 0] }}
+  transition={{ repeat: Infinity, duration: 1.5 }}
+>
+  {/* 화살표 아이콘 */}
+</motion.div>
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Factory2 Function 에러
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**현상**: `ERROR factory2 is not a function TypeError: factory2 is not a function at Webflow.define`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**원인**: `webflow.js`가 React의 모듈 시스템과 충돌
 
-## Learn More
+**임시 해결책**: 
+- 현재 `webflow.js` 로딩을 제거한 상태
+- Webflow 애니메이션이 필요한 부분은 React 네이티브 방식으로 재구현 필요
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**장기 해결책**:
+- Webflow의 모든 인터랙션을 React 컴포넌트로 재작성
+- CSS 애니메이션 또는 JavaScript 애니메이션 라이브러리 사용
