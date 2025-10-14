@@ -1,18 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Lottie from 'lottie-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import '../styles/webflow.css';
 import '../styles/tjidajfi.webflow.css';
 
 const Product = () => {
-  useEffect(() => {
-    // webflow.js 스크립트 로드
-    const script = document.createElement('script');
-    script.src = '/webflow.js';
-    script.async = true;
-    document.body.appendChild(script);
+  // Hamburger 메뉴 Lottie 애니메이션
+  const [hamburgerAnimation, setHamburgerAnimation] = useState(null);
+  const hamburgerRef = useRef();
 
-    return () => {
-      document.body.removeChild(script);
-    };
+  // iPad 애니메이션을 위한 ref 및 스크롤 추적
+  const tabletRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: tabletRef,
+    offset: ["start end", "end start"]
+  });
+
+  // 스크롤 진행도에 따른 애니메이션 값 변환
+  // 0% → 48%: 회전 70도 → 0도, 위치 -18vh → 0vh
+  const rotateX = useTransform(scrollYProgress, [0, 0.48], [70, 0]);
+  const yPosition = useTransform(scrollYProgress, [0, 0.48], ["-18vh", "0vh"]);
+  
+  // 스크린샷 스크롤 애니메이션: 38% → 100%: 0% → -30%
+  const screenshotY = useTransform(scrollYProgress, [0.38, 1], ["0%", "-30%"]);
+
+  useEffect(() => {
+    // Hamburger Lottie 애니메이션 JSON 로드
+    fetch('https://uploads-ssl.webflow.com/65e892ba99248ed5fb670277/65e892c099248ed5fb670bfd_YX7I2jQmHJ.json')
+      .then(response => response.json())
+      .then(data => setHamburgerAnimation(data))
+      .catch(error => console.error('Failed to load hamburger animation:', error));
+
+    // Webflow 재초기화 - DOM이 완전히 로드된 후
+    if (window.Webflow) {
+      window.Webflow.destroy();
+      window.Webflow.ready();
+      window.Webflow.require('ix2').init();
+    }
   }, []);
 
   return (
@@ -134,13 +158,16 @@ const Product = () => {
             <a href="/product" data-value="Resources" aria-current="page" className="nav-link w--current">Product</a>
           </div>
           <div className="hamburger-wrapper">
-            <div 
-              data-is-ix2-target="1" 
-              className="hamburger-lottie" 
-              data-w-id="82475569-db95-efa0-a402-81ea877a636b" 
-              data-animation-type="lottie" 
-              data-src="https://uploads-ssl.webflow.com/65e892ba99248ed5fb670277/65e892c099248ed5fb670bfd_YX7I2jQmHJ.json"
-            ></div>
+            {hamburgerAnimation && (
+              <Lottie 
+                lottieRef={hamburgerRef}
+                animationData={hamburgerAnimation}
+                loop={true}
+                autoplay={false}
+                className="hamburger-lottie"
+                style={{ width: '100%', height: '100%' }}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -165,24 +192,51 @@ const Product = () => {
           </div>
         </div>
         
-        {/* Tablet Animation */}
+        {/* Tablet Animation - React Native Solution */}
         <div className="container-w2 gutter-outside">
-      <div data-w-id="cc2bda7f-df30-f320-d65c-506b24b40f03" className="tablet-mockup-animation">
-        <div data-w-id="cc2bda7f-df30-f320-d65c-506b24b40f04" className="_3d-tablet-wrap">
-          <div className="_3d-tablet-inner">
-            <div className="ipad-mockup">
-              <div className="ipad-screen overflow-hidden">
-                <img src="images/ipad-pro-screen2.jpg"
-                loading="lazy"
-                sizes="(max-width: 991px) 94vw, 78vw" srcset="images/ipad-pro-screen2-p-500.jpeg 500w, images/ipad-pro-screen2-p-800.jpeg 800w, images/ipad-pro-screen2-p-1080.jpeg 1080w, images/ipad-pro-screen2-p-1600.jpeg 1600w, images/ipad-pro-screen2.jpg 1791w" alt="" className="screenshot-scroll"/></div><img src="images/ipadchartgetalgo.png" loading="lazy" sizes="(max-width: 991px) 100vw, 83vw"
-                srcset="images/ipadchartgetalgo-p-500.png 500w, images/ipadchartgetalgo-p-800.png 800w, images/ipadchartgetalgo-p-1080.png 1080w, images/ipadchartgetalgo.png 1202w" alt="" className="ipad-shape"/>
+          <motion.div 
+            ref={tabletRef}
+            className="tablet-mockup-animation"
+            style={{
+              y: yPosition
+            }}
+          >
+            <div className="_3d-tablet-wrap">
+              <motion.div 
+                className="_3d-tablet-inner"
+                style={{
+                  rotateX: rotateX
+                }}
+              >
+                <div className="ipad-mockup">
+                  <div className="ipad-screen overflow-hidden">
+                    <motion.img 
+                      src="images/ipad-pro-screen2.jpg"
+                      loading="lazy"
+                      sizes="(max-width: 991px) 94vw, 78vw" 
+                      srcSet="images/ipad-pro-screen2-p-500.jpeg 500w, images/ipad-pro-screen2-p-800.jpeg 800w, images/ipad-pro-screen2-p-1080.jpeg 1080w, images/ipad-pro-screen2-p-1600.jpeg 1600w, images/ipad-pro-screen2.jpg 1791w" 
+                      alt="" 
+                      className="screenshot-scroll"
+                      style={{
+                        y: screenshotY
+                      }}
+                    />
+                  </div>
+                  <img 
+                    src="images/ipadchartgetalgo.png" 
+                    loading="lazy" 
+                    sizes="(max-width: 991px) 100vw, 83vw"
+                    srcSet="images/ipadchartgetalgo-p-500.png 500w, images/ipadchartgetalgo-p-800.png 800w, images/ipadchartgetalgo-p-1080.png 1080w, images/ipadchartgetalgo.png 1202w" 
+                    alt="" 
+                    className="ipad-shape"
+                  />
+                </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
+          <div className="p-sm-start container-w3 text-center"></div>
         </div>
       </div>
-      <div className="p-sm-start container-w3 text-center"></div>
-    </div>
-  </div>
 
       {/* Mission Section 1 */}
       <div>

@@ -1,19 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import Lottie from 'lottie-react';
 import '../styles/webflow.css';
 import '../styles/tjidajfi.webflow.css';
 
 const Home = () => {
-  useEffect(() => {
-    // webflow.js 스크립트 로드
-    const script = document.createElement('script');
-    script.src = '/webflow.js';
-    script.async = true;
-    document.body.appendChild(script);
+  const [scrollDownAnimation, setScrollDownAnimation] = useState(null);
+  const lottieRef = useRef();
 
-    return () => {
-      document.body.removeChild(script);
-    };
+  useEffect(() => {
+    // Lottie 애니메이션 JSON 로드
+    fetch('https://uploads-ssl.webflow.com/639cdae01920e5582ef8287e/639cdae01920e5f379f8289b_lottieflow-scroll-down-04-1-ffffff-easey.json')
+      .then(response => response.json())
+      .then(data => setScrollDownAnimation(data))
+      .catch(error => console.error('Failed to load Lottie animation:', error));
+
+    // Webflow 재초기화 - DOM이 완전히 로드된 후
+    if (window.Webflow) {
+      window.Webflow.destroy();
+      window.Webflow.ready();
+      window.Webflow.require('ix2').init();
+    }
   }, []);
+
+  // Lottie 애니메이션이 로드되면 속도 설정
+  useEffect(() => {
+    if (lottieRef.current) {
+      lottieRef.current.setSpeed(0.65); 
+    }
+  }, [scrollDownAnimation]);
 
   return (
     <div>
@@ -89,12 +103,15 @@ const Home = () => {
           <div className="hero-bottom" data-w-id="ec3c0798-5955-3875-9bf0-2e523d18707a">
             <div className="scroll-down-wrapper">
               <p className="scroll-down-label">Scroll Down</p>
-              <div 
-                className="scroll-down-lottie" 
-                data-w-id="aa471614-b758-4e41-7ccb-a4b3bde32c82" 
-                data-animation-type="lottie" 
-                data-src="https://uploads-ssl.webflow.com/639cdae01920e5582ef8287e/639cdae01920e5f379f8289b_lottieflow-scroll-down-04-1-ffffff-easey.json"
-              ></div>
+              {scrollDownAnimation && (
+                <Lottie 
+                  lottieRef={lottieRef}
+                  animationData={scrollDownAnimation}
+                  className="scroll-down-lottie"
+                  loop={true}
+                  autoplay={true}
+                />
+              )}
             </div>
           </div>
         </div>
