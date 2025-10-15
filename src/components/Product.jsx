@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Lottie from 'lottie-react';
+import Navbar from './Navbar';  // ✅ 추가
 import { motion, useScroll, useTransform } from 'framer-motion';
 import '../styles/webflow.css';
 import '../styles/tjidajfi.webflow.css';
@@ -151,27 +152,7 @@ const Product = () => {
       `}</style>
 
       {/* Navigation */}
-      <div className="section nav">
-        <div className="container nav">
-          <div className="nav-links-wrapper">
-            <a href="/" data-value="Introduction" className="nav-link">Home</a>
-            <a href="/product" data-value="Resources" aria-current="page" className="nav-link w--current">Product</a>
-          </div>
-          <div className="hamburger-wrapper">
-            {hamburgerAnimation && (
-              <Lottie 
-                lottieRef={hamburgerRef}
-                animationData={hamburgerAnimation}
-                loop={true}
-                autoplay={false}
-                className="hamburger-lottie"
-                style={{ width: '100%', height: '100%' }}
-              />
-            )}
-          </div>
-        </div>
-      </div>
-
+      <Navbar />
       {/* Header */}
       <div className="header">
         <div className="subheader is-yellow"><strong className="bold-text-4">UTILIZE THE BEST TOOLS</strong><br/></div>

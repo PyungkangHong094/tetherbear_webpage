@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import Navbar from './Navbar';  // ✅ 추가
 import Lottie from 'lottie-react';
 import '../styles/webflow.css';
 import '../styles/tjidajfi.webflow.css';
@@ -22,7 +23,6 @@ const Home = () => {
     }
   }, []);
 
-  // Lottie 애니메이션이 로드되면 속도 설정
   useEffect(() => {
     if (lottieRef.current) {
       lottieRef.current.setSpeed(0.65); 
@@ -74,23 +74,7 @@ const Home = () => {
       </div>
 
       {/* Navigation */}
-      <div className="section nav">
-        <div className="container nav">
-          <div className="nav-links-wrapper">
-            <a href="/" data-value="Introduction" className="nav-link">Home</a>
-            <a href="/product" data-value="Resources" className="nav-link">Product</a>
-          </div>
-          <div className="hamburger-wrapper">
-            <div 
-              data-is-ix2-target="1" 
-              className="hamburger-lottie" 
-              data-w-id="82475569-db95-efa0-a402-81ea877a636b" 
-              data-animation-type="lottie" 
-              data-src="https://uploads-ssl.webflow.com/65e892ba99248ed5fb670277/65e892c099248ed5fb670bfd_YX7I2jQmHJ.json"
-            ></div>
-          </div>
-        </div>
-      </div>
+      <Navbar />  
 
       {/* Hero Section */}
       <div className="section hero" data-w-id="dc973e30-91e1-7801-7422-043985c62025">
@@ -116,7 +100,6 @@ const Home = () => {
           </div>
         </div>
         
-        {/* Hero Effects */}
         <div className="hero-aurora-stroke">
           <div className="aurora-stroke-inner"></div>
         </div>
@@ -127,7 +110,6 @@ const Home = () => {
           <div className="aurora-blur-inner"></div>
         </div>
         
-        {/* Light Triangle */}
         <div className="light-triangle w-embed" data-w-id="0f1e95b9-cd67-e41c-f6b2-ed077d774aa6">
           <svg width="100%" height="100%" viewBox="0 0 622 705" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M311 0L621.037 704.25H0.962891L311 0Z" fill="#E0CBE0"></path>
