@@ -421,7 +421,7 @@ const Home = () => {
           <div className="small-heading-4 p-show">Trading</div>
           <h2 className="margin-top-s p-show">프리미엄 알고리즘 지표<br/></h2>
           <div className="limit-width-2">
-            <p className="fade-gradient p-show">차트 보는 눈이 쉬워집니다<br/>차트겟 지표는 어떤 시장에서든 함께하며, <br/>필요한 모든 정보를핸드폰이나 컴퓨터 어디에서나 <br/>실시간으로 제공해드립니다<br/> 이제 스마트 지표와 함께라면, <br/>시장의 흐름을 놓치지 않고 항상<br/>최선의 결정을 내릴 수 있습니다</p>
+            <p className="fade-gradient p-show">차트 보는 눈이 쉬워집니다<br/>TetherBear 지표는 어떤 시장에서든 함께하며, <br/>필요한 모든 정보를핸드폰이나 컴퓨터 어디에서나 <br/>실시간으로 제공해드립니다<br/> 이제 스마트 지표와 함께라면, <br/>시장의 흐름을 놓치지 않고 항상<br/>최선의 결정을 내릴 수 있습니다</p>
           </div>
         </div>
         <div className="petals-wrapper" data-w-id="daff8c53-e859-42d7-9119-98577b8e99b0">
@@ -468,7 +468,7 @@ const Home = () => {
           <h2 className="margin-top-s p-show">JOIN US 함께해요!</h2>
           <h2 className="large-heading-2 p-show">Now!</h2>
           <div className="max-width-480">
-            <p className="fade-gradient from-left" data-w-id="502feb9f-14a2-b095-4047-8d8fe1d4555d">전 세계 커뮤니티를 만나보세요!<br/><br/>차트겟 트레이더와 혁신가들이 전세계로 연결되어있는 모든 트레이더들 아이디어와 스마트한 기술적 보조지표를 <br/>사용해서 금융시장의 날개를 달아 드리겠습니다</p>
+            <p className="fade-gradient from-left" data-w-id="502feb9f-14a2-b095-4047-8d8fe1d4555d">전 세계 커뮤니티를 만나보세요!<br/><br/>테더베어 트레이더와 혁신가들이 전세계로 연결되어있는 모든 트레이더들 아이디어와 스마트한 기술적 보조지표를 <br/>사용해서 금융시장의 날개를 달아 드리겠습니다</p>
           </div>
           <div className="button-wrapper" data-w-id="502feb9f-14a2-b095-4047-8d8fe1d45564">
             <a href="/product" className="button-4 w-inline-block">
@@ -496,8 +496,8 @@ const Home = () => {
         </div>
         <div className="footer-bottom">
           <div className="info-wrapper">
-            <p className="small_p">2023 Chartget</p>
-            <a href="#" target="_blank" className="author-text"><strong>2023 Chartget @ All right reserved</strong></a>
+            <p className="small_p">2023 TetherBear</p>
+            <a href="#" target="_blank" className="author-text"><strong>2023 TetherBear @ All right reserved</strong></a>
           </div>
         </div>
       </div>
