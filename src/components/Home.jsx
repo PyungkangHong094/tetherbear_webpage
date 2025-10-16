@@ -144,7 +144,7 @@ const Home = () => {
               </span>
             </p>
             <div className="button-wrapper" data-w-id="b7da5f0f-20cb-a828-3f6e-732b5ba87e26">
-              <a href="#Trading" className="button w-inline-block">
+              <a href="https://kr.tradingview.com/?aff_id=126652" className="button w-inline-block">
                 <div className="glow-border"></div>
                 <div className="button-inner">
                   <p>Get Started</p>
