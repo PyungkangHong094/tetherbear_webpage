@@ -182,7 +182,7 @@ function About() {
 
         <div className="about-stats">
           <div className="stat-item" style={{ animationDelay: '0.6s' }}>
-            <div className="stat-number">10K+</div>
+            <div className="stat-number">1.2K+</div>
             <div className="stat-label">Active Users</div>
           </div>
           <div className="stat-item" style={{ animationDelay: '0.7s' }}>
