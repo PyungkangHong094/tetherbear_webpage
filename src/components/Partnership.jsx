@@ -417,7 +417,7 @@ function Partnership() {
             <div className="banner-badge">공식 파트너</div>
             <h2 className="banner-title">
               거래소와 트레이더를 연결하는<br />
-              스마트 트레이딩 솔루션
+              스마트 트레이딩 컨설팅
             </h2>
             <p className="banner-subtitle">
               테더베어가 제공하는 전문적인 매매 지원 서비스
@@ -445,20 +445,20 @@ function Partnership() {
                 <div className="benefit-row">
                   <div className="benefit-tag">📈 보조지표 분석</div>
                   <div className="benefit-tag">📉 기술적 지표</div>
-                  <div className="benefit-tag">🎯 매매 전략</div>
+                  <div className="benefit-tag">🎯 시황 정보</div>
                 </div>
                 
                 {/* 3줄: 4개 (중앙 - 가장 넓음) */}
                 <div className="benefit-row">
                   <div className="benefit-tag">🔍 시장 분석</div>
-                  <div className="benefit-tag">💡 트레이딩 교육</div>
+                  <div className="benefit-tag">💡 트레이딩 콘텐츠</div>
                   <div className="benefit-tag">🛠️ 문제 해결</div>
-                  <div className="benefit-tag">📱 실시간 지원</div>
+                  <div className="benefit-tag">📱 맞춤 이벤트</div>
                 </div>
                 
                 {/* 4줄: 3개 */}
                 <div className="benefit-row">
-                  <div className="benefit-tag">🎓 1:1 멘토링</div>
+                  <div className="benefit-tag">🎓 무기한 페이백</div>
                   <div className="benefit-tag">📚 교육 자료</div>
                   <div className="benefit-tag">🤖 AI 분석</div>
                 </div>
@@ -485,7 +485,11 @@ function Partnership() {
             {/* Forex 파트너십 */}
             <div className="partnership-column">
               <h2 className="partnership-category">Forex 파트너십</h2>
-              {partnerships.forex.map((partner, index) => (
+              {[
+                { name: "벤티지", nameEn: "Vantage" },
+                { name: "아바트레이드", nameEn: "AvaTrade" },
+                { name: "악시", nameEn: "Axi" },
+              ].map((partner, index) => (
                 <div key={index} className="partner-card">
                   <div className="partner-name">{partner.name}</div>
                   <div className="partner-name-en">{partner.nameEn}</div>
@@ -496,7 +500,11 @@ function Partnership() {
             {/* Crypto 파트너십 */}
             <div className="partnership-column">
               <h2 className="partnership-category">Crypto 파트너십</h2>
-              {partnerships.crypto.map((partner, index) => (
+              {[
+                { name: "바이낸스", nameEn: "Binance" },
+                { name: "바이비트", nameEn: "Bybit" },
+                { name: "오케이엑스", nameEn: "OKX" },
+              ].map((partner, index) => (
                 <div key={index} className="partner-card">
                   <div className="partner-name">{partner.name}</div>
                   <div className="partner-name-en">{partner.nameEn}</div>
@@ -507,7 +515,10 @@ function Partnership() {
             {/* 플랫폼 파트너십 */}
             <div className="partnership-column">
               <h2 className="partnership-category">플랫폼 파트너십</h2>
-              {partnerships.platform.map((partner, index) => (
+              {[
+                { name: "차트큐", nameEn: "ChartQ" },
+                { name: "트레이딩뷰", nameEn: "TradingView" },
+              ].map((partner, index) => (
                 <div key={index} className="partner-card">
                   <div className="partner-name">{partner.name}</div>
                   <div className="partner-name-en">{partner.nameEn}</div>
@@ -515,6 +526,7 @@ function Partnership() {
               ))}
             </div>
           </div>
+              
         </div>
       </div>
     </div>

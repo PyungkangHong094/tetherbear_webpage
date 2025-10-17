@@ -134,13 +134,25 @@ const Home = () => {
             <div className="small-heading p-show">테더베어는 무엇인가요?</div>
             <h2 className="margin-top-s p-show">WHAT IS TETHER BEAR?</h2>
             <p className="fade-gradient margin-top-l p-show">
-              <strong>차트보는 법이 어려우셨나요?<br/>정보방 유료방 들어가셨나요?<br/>이제 테더베어와 함께 하세요</strong><br/><br/>
-              내 모든 차트를 한눈에, 이제껏 경험 못 했던 차트 보는법!<br/>
-              테더베어와 함께라면 당신의 차트보는 법이 새로워질 거예요.<br/><br/>
-              어려운 금융 차트를 쉽게 바꾸고 편리하게 처음 접하는사람들분들도<br/>
+              <strong>
+                차트 보는 법이 어려우셨나요?<br/>
+                정보방 유료방 들어가셨나요?<br/>
+                이제 테더베어와 함께 하세요
+              </strong>
+              <br/><br/>
+              
+              복잡한 금융 차트, 더 이상 혼자 해석하지 마세요.<br/>
+              테더베어는 쉽고 직관적인 차트 지표와<br/>
+              실시간 시황·매니저 소통, <br/>그리고 회원 개개인에게 유리한 맞춤형 지원과 컨설팅을 제공합니다.<br/><br/>
+              
               <span className="text-span">
-                <strong>간단하게 알아볼 수 있게 전략 적인 AI 솔루션을 제공합니다<br/>
-                모든 시장에 맞게 설계된 지표를 사용하여 모든 거래에서 알맞은 타점을 찾아보세요</strong>.
+                <strong>
+                  전문 매니저의 실시간 피드백과 회원별 맞춤 컨설팅으로<br/>
+                  개인의 거래 방향을 최적화 해드립니다.<br/><br/>
+                  
+                  초보부터 고수까지, 모두를 위한 직관적 인터페이스<br/>
+                  테더베어와 함께라면 차트는 더 이상 복잡하지 않습니다.
+                </strong>
               </span>
             </p>
             <div className="button-wrapper" data-w-id="b7da5f0f-20cb-a828-3f6e-732b5ba87e26">
@@ -171,19 +183,28 @@ const Home = () => {
             <div className="card-2 left">
               <div className="card-inner">
                 <h4>Tether Bear : 기술적 분석의<br/>새로운 시대를 만들다</h4>
-                <p className="small_p">우리는 최첨단 거래 지표와 전략을 개발하고 제공함으로써 거래자와 분석가가 금융 시장에서 수익성 있게 경쟁할 수 있도록 돕습니다.<br/></p>
+                <p className="small_p">우리는 최첨단 거래 지표와 전략을 개발하고 제공함으로써 거래자와 분석가가 금융 시장에서 수익성 있게 경쟁할 수 있도록 돕습니다<br/></p>
               </div>
             </div>
+            
             <div className="card-2">
               <div className="card-inner">
-                <h4>24/7 자동매매 : 자동 거래 봇<br/>전략 최적화</h4>
-                <p className="small_p">직관적이며 간결한 자동 거래 봇을 만듭니다. <br/>수학적이고 논리적으로 24/7 끊임 없이 매매가 이루어집니다. 내가 휴식하는 동안 봇은 자동으로 계속 매매합니다<br/></p>
+                <h4>전문 매니저의 회원별 맞춤 컨설팅</h4>
+                <p className="small_p">
+                  테더베어는 시장 흐름과 개인 성향을 함께 고려한<br/>
+                  전략적 접근을 제공합니다<br/>
+                  회원마다 다른 투자 스타일과 목표에 맞춰,<br/>
+                  가장 유리한 거래소와 전략을 컨설팅해드립니다<br/>
+                </p>
               </div>
             </div>
             <div className="card-2 left">
               <div className="card-inner">
-                <h4>금융 체인지 : AI구현</h4>
-                <p className="small_p">우리는 AI를 솔루션에 연결할 수 있는 능력을 지속적으로 연구하면서 끊임없이 금융 혁신을 만들어가고 있습니다. 트레이더, 펀드매니저, 개발자가 합작해서 진행을 하고있습니다.</p>
+                <h4>거래할수록 보너스</h4>
+                <p className="small_p">단순히 거래를 지원하는 데 그치지 않습니다<br/>
+                    수수료 일부를 페이백 형태로 다시 돌려드려, <br/>
+                    더 유리한 환경에서 거래할 수 있도록 돕습니다<br/>
+                    언제나 회원과 함께 성장하는 구조, <br/>테더베어의 철학입니다</p>
               </div>
             </div>
             <div className="card-2 right">
@@ -223,17 +244,17 @@ const Home = () => {
               </div>
               <div className="petal inverse" data-w-id="8a0d05c9-1921-c6da-cbac-95f002d08e37">
                 <div className="small-heading-3 _16px">Crypto</div>
-                <h3>테더베어 알고리즘<br/></h3>
+                <h3>테더베어<br/></h3>
               </div>
             </div>
             <div className="rotate-circle-outline-2">
-              <div className="rotate-circle-inner">
-                <p className="rotate-circle-text is-1">Accessibility</p>
-                <p className="rotate-circle-text is-2">Expense</p>
-                <p className="rotate-circle-text is-3">Security</p>
-                <p className="rotate-circle-text is-4">Technology</p>
-                <p className="rotate-circle-text is-5">Provider &amp; Support</p>
-              </div>
+            <div className="rotate-circle-inner">
+              <p className="rotate-circle-text is-1">접근성</p>
+              <p className="rotate-circle-text is-2">비용</p>
+              <p className="rotate-circle-text is-3">보안</p>
+              <p className="rotate-circle-text is-4">기술</p>
+              <p className="rotate-circle-text is-5">서비스 제공 & 지원</p>
+            </div>
             </div>
             <div className="two-col-wrapper">
               <div className="petal inverse" data-w-id="8a0d05c9-1921-c6da-cbac-95f002d08e4a">
@@ -248,9 +269,13 @@ const Home = () => {
               <div className="petal" data-w-id="8a0d05c9-1921-c6da-cbac-95f002d08e60">
                 <div className="petal-description-wrapper">
                   <p className="petal-description right is-1">24시간 내내, 계속 시스템이 돌아갑니다</p>
-                  <p className="petal-description right is-2">1년동안 100만원 이하입니다</p>
+                  <p className="petal-description right is-2">테더베어는 <br/>
+                    회원님의 거래 활동을 통해 발생한 수수료를<br/>
+                    페이백 형태로 다시 돌려드립니다.</p>
                   <p className="petal-description right is-3">차별화 하지 않습니다<br/>모든건 동일하게 관리합니다</p>
-                  <p className="petal-description right is-4">현대 시대와 맞게 A.I 기술력을 선보이고 지속적으로개발자가 개발을 이어갑니다</p>
+                  <p className="petal-description right is-4">우리는 전문적인 시장을 누구보다 깊이 분석하고<br/>
+                    그 결과 만들어진 전문적인 차트와 다양한 맞춤형 지표를<br/>    
+                    회원님들과 공유합니다.</p>
                   <p className="petal-description right is-5">새로운 기술 및 새로운 자료책이 나오면 무료로 제공</p>
                 </div>
               </div>
@@ -302,23 +327,23 @@ const Home = () => {
                     <h3 className="h3-small">트레이딩뷰 가입</h3>
                     <p className="progress-bar-p">트레이딩뷰 가입을 우선적으로 하셔야합니다. 트레이딩뷰 가입을 하시면 저희에게 사용자 아이디를 알려주셔야합니다.<br/>사용자 아이디를 정확하게 알려주시면 저희가 초대장을 드립니다.</p>
                     <div className="small-button-wrapper">
-                      <a href="https://kr.tradingview.com/?aff_id=126652" target="_blank" className="button-3 is-smaller w-inline-block">
+                      <a href="/partnership" target="_blank" className="button-3 is-smaller w-inline-block">
                         <div className="glow-border"></div>
                         <div className="button-inner smaller">
-                          <p>Go To TradingView</p>
+                          <p>Go To Partnership</p>
                         </div>
                       </a>
                       <div className="button-glow-2"></div>
                     </div>
                   </div>
                   <div className="stage-description-column">
-                    <h3 className="h3-small">소셜미디아 가입</h3>
+                    <h3 className="h3-small">트레이딩뷰 가입</h3>
                     <p className="progress-bar-p">텔레그램, 디스코드 가입을 해주셔야 알림을 지속적으로 받을 수 있습니다. 데이터가 24시간 돌아가고 있습니다. 실시간 알림 서비스를 원하시면 소셜미디어 가입을 하시고 저희에게 사용자 아이디를 알려주시면 됩니다</p>
                     <div className="small-button-wrapper">
-                      <a href="https://discord.com/invite/A88TR3QUya" target="_blank" className="button-3 is-smaller w-inline-block">
+                      <a href="https://kr.tradingview.com/?aff_id=126652" target="_blank" className="button-3 is-smaller w-inline-block">
                         <div className="glow-border"></div>
                         <div className="button-inner smaller">
-                          <p>Go To Discord</p>
+                          <p>Go To TradingView</p>
                         </div>
                       </a>
                       <div className="button-glow-2"></div>
@@ -347,7 +372,7 @@ const Home = () => {
                 <h3 className="h3-small">테더베어 바로 시작</h3>
                 <p className="progress-bar-p">테더베어 알고리즘을 바로 시작을 원하시면 아래 버튼을 클릭하시면 됩니다. <br/>거래를 할 수 있는 거래소를 가입해주세요<br/></p>
                 <div className="small-button-wrapper">
-                  <a href="#" className="button is-smaller w-inline-block">
+                  <a href="/product" className="button is-smaller w-inline-block">
                     <div className="glow-border"></div>
                     <div className="button-inner smaller">
                       <p>Get Started</p>
@@ -357,26 +382,28 @@ const Home = () => {
                 </div>
               </div>
               <div className="stage-description-column">
-                <h3 className="h3-small">트레이딩뷰 가입</h3>
-                <p className="progress-bar-p">트레이딩뷰 가입을 우선적으로 하셔야합니다. 트레이딩뷰 가입을 하시면 저희에게 사용자 아이디를 알려주셔야합니다.<br/>사용자 아이디를 정확하게 알려주시면 저희가 초대장을 드립니다.</p>
+                <h3 className="h3-small">파트너쉽 가입</h3>
+                <p className="progress-bar-p">파트너십 가입을 우선적으로 하셔야합니다.
+                링크 통해서 가입하시거나 가입이 어려우신 경우<br/>
+                텔레그램을 통해 문의해 주시면 됩니다</p>
                 <div className="small-button-wrapper">
-                  <a href="https://kr.tradingview.com/?aff_id=126652" target="_blank" className="button is-smaller w-inline-block">
+                  <a href="/product" target="_blank" className="button is-smaller w-inline-block">
                     <div className="glow-border"></div>
                     <div className="button-inner smaller">
-                      <p>Go To TradingView</p>
+                      <p>Go To Partnership</p>
                     </div>
                   </a>
                   <div className="button-glow"></div>
                 </div>
               </div>
               <div className="stage-description-column">
-                <h3 className="h3-small">소셜미디아 가입</h3>
+                <h3 className="h3-small">트레이딩뷰 가입</h3>
                 <p className="progress-bar-p">텔레그램, 디스코드 가입을 해주셔야 알림을 지속적으로 받을 수 있습니다. 데이터가 24시간 돌아가고 있습니다. 실시간 알림 서비스를 원하시면 소셜미디어 가입을 하시고 저희에게 사용자 아이디를 알려주시면 됩니다</p>
                 <div className="small-button-wrapper">
-                  <a href="https://discord.com/invite/A88TR3QUya" target="_blank" className="button is-smaller w-inline-block">
+                  <a href="https://kr.tradingview.com/?aff_id=126652" target="_blank" className="button is-smaller w-inline-block">
                     <div className="glow-border"></div>
                     <div className="button-inner smaller">
-                      <p>Go To Discord</p>
+                      <p>Go To Tradingview</p>
                     </div>
                   </a>
                   <div className="button-glow"></div>

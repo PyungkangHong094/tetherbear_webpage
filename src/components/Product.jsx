@@ -227,9 +227,9 @@ const Product = () => {
         <div className="main-container">
           <div className="w-layout-grid _1-2-grid reverse"><img src="images/chartgetalgoIndicator.png" loading="lazy" id="w-node-_46d3e7ab-541e-9517-e836-da6644dd3473-49f2a8a2" height="Auto" alt="" srcset="images/차트겟-보조지표-p-500.png 500w, images/차트겟-보조지표-p-800.png 800w, images/차트겟-보조지표-p-1080.png 1080w, images/chartgetalgoIndicator.png 1500w" sizes="(max-width: 1439px) 90vw, 1100px" className="hero-image-2"/>
             <div id="w-node-_46d3e7ab-541e-9517-e836-da6644dd3474-49f2a8a2" className="content-wrap">
-              <h2 className="h2">We&#x27;re on a huge mission</h2>
+              <h2 className="h2">복잡한 차트, 이제 테더베어가 쉽게 풀어드립니다</h2>
               <div className="spacer-m"></div>
-              <p className="paragraph-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+              <p className="paragraph-5">어려운 금융 차트를 처음 접하는 분들도 간단하게 알아볼 수 있도록 <br/>전략적인 해설을 제공합니다.</p>
               <div className="spacer-l"></div>
             </div>
           </div>
@@ -244,9 +244,9 @@ const Product = () => {
         <div className="main-container">
           <div className="w-layout-grid _1-2-grid reverse">
             <div id="w-node-_1218c13f-41aa-d815-8f3e-6d557da6b171-49f2a8a2" className="content-wrap">
-              <h2 className="h2">We&#x27;re on a huge mission</h2>
+              <h2 className="h2">"이젠 유료방 NO!" 모든 차트를 한눈에 통합 관리</h2>
               <div className="spacer-m"></div>
-              <p className="paragraph-5">고급 반전 신호, 완전 자동화된 가격 조치 툴킷 및 20개 이상의 프리미엄 기능에 액세스하세요. 지금까지 만들어진 가장 발전된 지표는 모두 커뮤니티 피드백을 바탕으로 만들어졌습니다.</p>
+              <p className="paragraph-5">여러 정보를 찾아 헤맬 필요 없이 나에게 맞는 관점을 찾아갈 수 있게 도와드립니다</p>
               <div className="spacer-l"></div>
             </div><img src="https://assets-global.website-files.com/62eb909a3fa9a704a2e98187/62eb909a3fa9a767dce981e4_pexels-pixabay-461064.jpg" loading="lazy" id="w-node-_1218c13f-41aa-d815-8f3e-6d557da6b178-49f2a8a2" alt="" className="hero-image-2"/>
           </div>
@@ -261,9 +261,9 @@ const Product = () => {
         <div className="main-container">
           <div className="w-layout-grid _1-2-grid reverse"><img src="https://assets-global.website-files.com/62eb909a3fa9a704a2e98187/62eb909a3fa9a767dce981e4_pexels-pixabay-461064.jpg" loading="lazy" id="w-node-_842a6875-db64-9fa5-5f99-ac91afbc9dd6-49f2a8a2" alt="" className="hero-image-2"/>
             <div id="w-node-_842a6875-db64-9fa5-5f99-ac91afbc9dd7-49f2a8a2" className="content-wrap">
-              <h2 className="h2">We&#x27;re on a huge mission</h2>
+              <h2 className="h2">모든 시장에서 알맞은 거래 지원 서비스</h2>
               <div className="spacer-m"></div>
-              <p className="paragraph-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+              <p className="paragraph-5">모든 시장 상황에 맞게 설계된 지표를 사용하여,<br/> 거래에서 놓치지 않아야 할 정확한 타점을 찾아드립니다</p>
               <div className="spacer-l"></div>
             </div>
           </div>
