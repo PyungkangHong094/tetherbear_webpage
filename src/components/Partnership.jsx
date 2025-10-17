@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import '../styles/webflow.css';
 import '../styles/tjidajfi.webflow.css';
+import Footer from './Footer';
 
 function Partnership() {
   const partnerships = {
@@ -283,6 +284,91 @@ function Partnership() {
           font-family: 'Open Sans', sans-serif;
         }
 
+        /* Footer Styles */
+        .footer-section {
+            background-color: #000;
+            border-top: 1px solid #333;
+            padding: 40px 25px;
+            color: #fff;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .brand-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(120deg, #e0cbe0, #4c45a5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: linear-gradient(120deg, #4c45a5, #e0cbe0);
+            transform: translateY(-2px);
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+            color: #888;
+            font-family: 'Open Sans', sans-serif;
+        }
+
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -397,6 +483,25 @@ function Partnership() {
 
           .partner-card {
             padding: 25px 20px;
+          }
+
+          .footer-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+          }
+          
+          .footer-brand {
+            flex-direction: column;
+            gap: 10px;
+          }
+          
+          .brand-text {
+            font-size: 20px;
+          }
+          
+          .social-icons {
+            justify-content: center;
           }
         }
       `}</style>
@@ -526,9 +631,9 @@ function Partnership() {
               ))}
             </div>
           </div>
-              
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

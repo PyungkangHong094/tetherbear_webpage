@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';  // ✅ Navbar 추가
 import '../styles/webflow.css';
 import '../styles/tjidajfi.webflow.css';
+import Footer from './Footer';
 
 function About() {
   return (
@@ -231,6 +232,7 @@ function About() {
           </div>
         </div>
       </div>
+      {/* <Footer/> */}
     </div>
   );
 }

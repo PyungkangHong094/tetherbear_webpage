@@ -239,11 +239,11 @@ const Home = () => {
           <div className="container allign-center">
             <div className="two-col-wrapper">
               <div className="petal" data-w-id="8a0d05c9-1921-c6da-cbac-95f002d08e31">
-                <div className="small-heading-3 _16px">Traditional</div>
+                <div className="small-heading-3 _16px">구시대 도우미</div>
                 <h3>다른 업체 및 유료방<br/></h3>
               </div>
               <div className="petal inverse" data-w-id="8a0d05c9-1921-c6da-cbac-95f002d08e37">
-                <div className="small-heading-3 _16px">Crypto</div>
+                <div className="small-heading-3 _16px">금융 도우미</div>
                 <h3>테더베어<br/></h3>
               </div>
             </div>
