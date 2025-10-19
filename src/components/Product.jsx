@@ -182,12 +182,12 @@ const Product = () => {
                   스마트하게 볼 수 있도록 <br />‍<br />
                   차세대 거래 지표를 만듭니다.
                 </div>
-                <a
+                {/* <a
                   href="price.html"
                   className="button-2 is-yellow margin-top-30 w-button"
                 >
                   고급 차트 받기
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
