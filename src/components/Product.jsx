@@ -385,7 +385,7 @@ const Product = () => {
               <h3 className="sub-heading light-text">
                 테더베어는 시장 흐름과 개인 성향을 함께 고려한 전략적 접근을
                 제공합니다.{" "}
-                <strong>회원마다 다른 투자 스타일과 목표에 맞춰,</strong>. 가장
+                <strong>회원마다 다른 투자 스타일과 목표에 맞춰</strong>. 가장
                 유리한 거래소와 포지션 전략을 컨설팅해드립니다.
               </h3>
             </div>
