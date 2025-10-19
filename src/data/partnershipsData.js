@@ -12,6 +12,7 @@ export const partnershipsData = {
       discount: "0%",
       totalPayback: "2,618,202 USDT",
       type: "exchange",
+      badge: "최다 선택",
     },
     {
       id: "avatrade",
