@@ -32,7 +32,9 @@ function Partnership() {
       className="partner-row"
       role="listitem"
       tabIndex={0}
-      onClick={() => p.link && window.open(p.link, "_blank", "noopener,noreferrer")}
+      onClick={() =>
+        p.link && window.open(p.link, "_blank", "noopener,noreferrer")
+      }
       onKeyDown={(e) => {
         if ((e.key === "Enter" || e.key === " ") && p.link) {
           window.open(p.link, "_blank", "noopener,noreferrer");
@@ -92,9 +94,9 @@ function Partnership() {
       {/* 오른쪽: 다운로드 버튼들 */}
       <div className="platform-actions">
         {p.googlePlay && (
-          <a 
-            href={p.googlePlay} 
-            target="_blank" 
+          <a
+            href={p.googlePlay}
+            target="_blank"
             rel="noopener noreferrer"
             className="platform-btn google"
             onClick={(e) => e.stopPropagation()}
@@ -104,9 +106,9 @@ function Partnership() {
           </a>
         )}
         {p.appStore && (
-          <a 
-            href={p.appStore} 
-            target="_blank" 
+          <a
+            href={p.appStore}
+            target="_blank"
             rel="noopener noreferrer"
             className="platform-btn apple"
             onClick={(e) => e.stopPropagation()}
@@ -116,9 +118,9 @@ function Partnership() {
           </a>
         )}
         {p.link && !p.googlePlay && !p.appStore && (
-          <a 
-            href={p.link} 
-            target="_blank" 
+          <a
+            href={p.link}
+            target="_blank"
             rel="noopener noreferrer"
             className="platform-btn web"
             onClick={(e) => e.stopPropagation()}
@@ -150,7 +152,8 @@ function Partnership() {
           <div className="partnership-banner">
             <div className="banner-badge">공식 파트너</div>
             <h2 className="banner-title">
-              거래소와 트레이더를 연결하는<br />
+              거래소와 트레이더를 연결하는
+              <br />
               스마트 트레이딩 컨설팅
             </h2>
             <p className="banner-subtitle">
@@ -161,7 +164,11 @@ function Partnership() {
               {/* 왼쪽: 거래소 */}
               <div className="process-node">
                 <div className="process-circle">
-                  <div className="process-label">파트너<br />거래소</div>
+                  <div className="process-label">
+                    파트너
+                    <br />
+                    거래소
+                  </div>
                 </div>
               </div>
 
@@ -173,26 +180,26 @@ function Partnership() {
                   <div className="benefit-tag">📊 차트 보는법</div>
                   <div className="benefit-tag">⚙️ 차트 세팅법</div>
                 </div>
-                
+
                 <div className="benefit-row">
                   <div className="benefit-tag">📈 보조지표 분석</div>
                   <div className="benefit-tag">📉 기술적 지표</div>
                   <div className="benefit-tag">🎯 시황 정보</div>
                 </div>
-                
+
                 <div className="benefit-row">
                   <div className="benefit-tag">🔍 시장 분석</div>
                   <div className="benefit-tag">💡 트레이딩 콘텐츠</div>
                   <div className="benefit-tag">🛠️ 문제 해결</div>
                   <div className="benefit-tag">📱 맞춤 이벤트</div>
                 </div>
-                
+
                 <div className="benefit-row">
                   <div className="benefit-tag">🎓 무기한 페이백</div>
                   <div className="benefit-tag">📚 교육 자료</div>
                   <div className="benefit-tag">🤖 AI 분석</div>
                 </div>
-                
+
                 <div className="benefit-row">
                   <div className="benefit-tag">💬 커뮤니티</div>
                   <div className="benefit-tag">🎁 특별 혜택</div>
@@ -204,14 +211,22 @@ function Partnership() {
               {/* 오른쪽: 트레이더 */}
               <div className="process-node">
                 <div className="process-circle">
-                  <div className="process-label">테더베어와 함께<br />트레이더</div>
+                  <div className="process-label">
+                    테더베어와 함께
+                    <br />
+                    트레이더
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* 🔥 탭 네비게이션 */}
-          <div className="partnership-tabs" role="tablist" aria-label="파트너 카테고리">
+          <div
+            className="partnership-tabs"
+            role="tablist"
+            aria-label="파트너 카테고리"
+          >
             {["forex", "crypto", "platform"].map((key) => (
               <button
                 key={key}
@@ -228,7 +243,9 @@ function Partnership() {
           {/* 선택된 탭만 렌더 */}
           <div className="partnership-grid" role="list" aria-live="polite">
             <div className="partnership-column">
-              <h2 className="partnership-category">{categoryTitles[activeTab]}</h2>
+              <h2 className="partnership-category">
+                {categoryTitles[activeTab]}
+              </h2>
 
               {partners.length === 0 && (
                 <div className="empty-state">표시할 파트너가 없습니다.</div>

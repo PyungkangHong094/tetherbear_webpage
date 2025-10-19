@@ -425,14 +425,18 @@ export const partnershipStyles = `
   }
 
   .platform-logo {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.06);
-    padding: 8px;
-    flex-shrink: 0;
-  }
+      width: 64px !important;
+      height: 64px !important;
+      min-width: 64px;
+      min-height: 64px;
+      max-width: 64px;
+      max-height: 64px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: transparent;           /* ✅ 배경 투명 */
+      padding: 0;                        /* ✅ 패딩 제거 */
+      flex-shrink: 0;
+    }
 
   .platform-info {
     flex: 1;
@@ -667,8 +671,17 @@ export const partnershipStyles = `
     }
 
     .platform-logo {
-      width: 48px;
-      height: 48px;
+      width: 64px !important;
+      height: 64px !important;
+      min-width: 64px;
+      min-height: 64px;
+      max-width: 64px;
+      max-height: 64px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: transparent;           /* ✅ 배경 투명 */
+      padding: 0;                        /* ✅ 패딩 제거 */
+      flex-shrink: 0;
     }
 
     .platform-actions {
