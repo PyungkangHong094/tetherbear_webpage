@@ -10,7 +10,7 @@ export const partnershipsData = {
       logo: "/images/partners/vantage.png",
       payback: "10%",
       discount: "0%",
-      totalPayback: "2,618,202 USDT",
+      totalPayback: "31,238,201 USDT",
       type: "exchange",
       badge: "최다 선택",
       link: "/exchanges/vantage", // ✅ 내부 페이지로 이동
@@ -22,7 +22,7 @@ export const partnershipsData = {
       logo: "/images/partners/avatrade.png",
       payback: "10%",
       discount: "0%",
-      totalPayback: "2,618,202 USDT",
+      totalPayback: "1,658,127 USDT",
       type: "exchange",
       link: "/exchanges/avatrade", // ✅ 내부 페이지로 이동
     },
@@ -33,7 +33,7 @@ export const partnershipsData = {
       logo: "/images/partners/axi.png",
       payback: "10%",
       discount: "0%",
-      totalPayback: "2,618,202 USDT",
+      totalPayback: "618,202 USDT",
       type: "exchange",
       link: "/exchanges/axi", // ✅ 내부 페이지로 이동
     },
@@ -48,7 +48,7 @@ export const partnershipsData = {
       logo: "/images/partners/binance.png",
       payback: "20%",
       discount: "20%",
-      totalPayback: "2,618,202 USDT",
+      totalPayback: "32,418,552 USDT",
       type: "exchange",
       badge: "상위 거래소",
       link: "/exchanges/binance", // ✅ 내부 페이지로 이동
@@ -60,7 +60,7 @@ export const partnershipsData = {
       logo: "/images/partners/okx.png",
       payback: "40%",
       discount: "20%",
-      totalPayback: "2,500,000 USDT",
+      totalPayback: "62,204,337 USDT",
       type: "exchange",
       badge: "최다 선택",
       link: "/exchanges/okx", // ✅ 내부 페이지로 이동
@@ -72,7 +72,7 @@ export const partnershipsData = {
       logo: "/images/partners/bybit.png",
       payback: "35%",
       discount: "20%",
-      totalPayback: "2,779,715 USDT",
+      totalPayback: "2,619,415 USDT",
       type: "exchange",
       link: "/exchanges/bybit", // ✅ 내부 페이지로 이동
     },
