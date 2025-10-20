@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 const VantageGuide = () => {
+  // 🔥 아코디언 상태 관리 (기본값: 1단계만 열림)
+  const [openSections, setOpenSections] = useState({
+    step1: true,
+    step2: false,
+    step3: false,
+    step4: false,
+  });
+
+  // 섹션 토글 함수
+  const toggleSection = (section) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
   const styles = `
     * {
       box-sizing: border-box;
@@ -96,27 +112,68 @@ const VantageGuide = () => {
       box-shadow: 0 4px 15px rgba(76, 69, 165, 0.4);
     }
 
+    /* 🔥 아코디언 스타일 */
     .guide-section {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 30px;
-      animation: fadeInUp 0.8s ease;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .guide-section:hover {
+      border-color: rgba(76, 69, 165, 0.3);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .section-header:hover {
+      background: rgba(76, 69, 165, 0.05);
     }
 
     .section-title {
       font-size: 28px;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 25px;
       display: flex;
       align-items: center;
       gap: 12px;
+      margin: 0;
     }
 
     .section-icon {
       font-size: 32px;
+    }
+
+    .toggle-icon {
+      font-size: 24px;
+      color: #b8b8b8;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-icon.open {
+      transform: rotate(180deg);
+    }
+
+    .section-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.3s ease;
+      padding: 0 40px;
+    }
+
+    .section-content.open {
+      max-height: 5000px;
+      padding: 0 40px 40px 40px;
     }
 
     .guide-steps {
@@ -289,44 +346,61 @@ const VantageGuide = () => {
     }
 
     .contact-title {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 700;
       color: #fff;
       margin-bottom: 15px;
       text-align: center;
     }
 
+    .contact-description {
+      font-size: 16px;
+      color: #d0d0d0;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .contact-description strong {
+      color: #b794f6;
+      font-weight: 700;
+    }
+
     .contact-methods {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .contact-card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
-      padding: 20px;
+      padding: 30px;
       text-align: center;
       transition: all 0.3s ease;
       cursor: pointer;
+      text-decoration: none;
+      display: block;
     }
 
     .contact-card:hover {
-      background: rgba(76, 69, 165, 0.1);
-      transform: translateY(-5px);
+      background: rgba(76, 69, 165, 0.15);
+      border-color: rgba(76, 69, 165, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(76, 69, 165, 0.3);
     }
 
     .contact-icon {
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: 48px;
+      margin-bottom: 15px;
     }
 
     .contact-name {
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 18px;
+      font-weight: 700;
       color: #fff;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
 
     .contact-value {
@@ -355,12 +429,16 @@ const VantageGuide = () => {
         font-size: 36px;
       }
 
-      .guide-section {
+      .section-header {
         padding: 25px;
       }
 
       .section-title {
-        font-size: 24px;
+        font-size: 22px;
+      }
+
+      .section-content.open {
+        padding: 0 25px 25px 25px;
       }
 
       .guide-step {
@@ -413,227 +491,279 @@ const VantageGuide = () => {
           </div>
         </div>
 
-        {/* 1단계: 계정 가입 */}
+        {/* 🔥 1단계: 계정 가입 (아코디언) */}
         <div className="guide-section">
-          <h2 className="section-title">
-            <span className="section-icon">📝</span>
-            1단계: 계정 가입
-          </h2>
-          <div className="guide-steps">
-            <div className="guide-step">
-              <div className="step-number">1</div>
-              <div className="step-content">
-                <div className="step-title">테더베어 전용 링크 접속</div>
-                <div className="step-description">
-                  반드시 테더베어 제휴 링크를 통해 가입해야 10% 페이백 혜택을
-                  받을 수 있습니다. 일반 링크로 가입하면 혜택이 적용되지 않으니
-                  주의하세요.
-                </div>
-              </div>
-            </div>
-
-            <div className="guide-step">
-              <div className="step-number">2</div>
-              <div className="step-content">
-                <div className="step-title">이메일 및 비밀번호 설정</div>
-                <div className="step-description">
-                  자주 사용하는 이메일 주소를 입력하고, 8자 이상의 안전한
-                  비밀번호를 설정하세요. (대문자, 소문자, 숫자 조합 권장)
-                </div>
-              </div>
-            </div>
-
-            <div className="guide-step">
-              <div className="step-number">3</div>
-              <div className="step-content">
-                <div className="step-title">이메일 인증 완료</div>
-                <div className="step-description">
-                  가입 후 이메일로 발송된 인증 링크를 클릭하여 계정을
-                  활성화합니다. 스팸함도 확인해주세요.
-                </div>
-              </div>
-            </div>
+          <div
+            className="section-header"
+            onClick={() => toggleSection("step1")}
+          >
+            <h2 className="section-title">
+              <span className="section-icon"></span>
+              1단계: 계정 가입
+            </h2>
+            <span className={`toggle-icon ${openSections.step1 ? "open" : ""}`}>
+              ▼
+            </span>
           </div>
+          <div
+            className={`section-content ${openSections.step1 ? "open" : ""}`}
+          >
+            <div className="guide-steps">
+              <div
+                className="guide-step"
+                onClick={() => window.open("https://vigco.co/V73Mb2", "_blank")}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <div className="step-title">테더베어 전용 링크 접속</div>
+                  <div className="step-description">
+                    반드시 테더베어 제휴 링크를 통해 가입해야 10% 페이백 혜택을
+                    받을 수 있습니다. 일반 링크로 가입하면 혜택이 적용되지
+                    않으니 주의하세요.
+                  </div>
+                </div>
+              </div>
 
-          <div className="info-box">
-            <div className="info-box-title">💡 중요 안내</div>
-            <div className="info-box-content">
-              <ul>
-                <li>테더베어 전용 링크로만 가입해야 페이백 혜택 적용</li>
-                <li>이메일 인증을 완료해야 다음 단계 진행 가능</li>
-                <li>비밀번호는 반드시 안전하게 보관하세요</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+              <div className="guide-step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <div className="step-title">이메일 및 비밀번호 설정</div>
+                  <div className="step-description">
+                    자주 사용하는 이메일 주소를 입력하고, 8자 이상의 안전한
+                    비밀번호를 설정하세요. (대문자, 소문자, 숫자 조합 권장)
+                  </div>
+                </div>
+              </div>
 
-        {/* 2단계: KYC 인증 */}
-        <div className="guide-section">
-          <h2 className="section-title">
-            <span className="section-icon">🔐</span>
-            2단계: KYC 인증 (신원 확인)
-          </h2>
-          <div className="guide-steps">
-            <div className="guide-step">
-              <div className="step-number">1</div>
-              <div className="step-content">
-                <div className="step-title">개인정보 입력</div>
-                <div className="step-description">
-                  실명, 생년월일, 국적, 주소 등 기본 정보를 정확하게 입력합니다.
-                  신분증과 정보가 일치해야 합니다.
+              <div className="guide-step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <div className="step-title">이메일 인증 완료</div>
+                  <div className="step-description">
+                    가입 후 이메일로 발송된 인증 링크를 클릭하여 계정을
+                    활성화합니다. 스팸함도 확인해주세요.
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="guide-step">
-              <div className="step-number">2</div>
-              <div className="step-content">
-                <div className="step-title">신분증 업로드</div>
-                <div className="step-description">
-                  주민등록증, 여권, 운전면허증 중 하나를 선택하여 앞/뒷면을
-                  선명하게 촬영 후 업로드합니다.
-                </div>
-              </div>
-            </div>
-
-            <div className="guide-step">
-              <div className="step-number">3</div>
-              <div className="step-content">
-                <div className="step-title">셀카 인증 (Liveness Check)</div>
-                <div className="step-description">
-                  신분증을 손에 들고 얼굴과 함께 촬영합니다. 밝은 곳에서 찍어야
-                  승인률이 높습니다.
-                </div>
-              </div>
-            </div>
-
-            <div className="guide-step">
-              <div className="step-number">4</div>
-              <div className="step-content">
-                <div className="step-title">심사 대기 (1-24시간)</div>
-                <div className="step-description">
-                  제출 후 보통 1-24시간 내에 승인 결과가 이메일로 전송됩니다.
-                  영업일 기준으로 처리됩니다.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="info-box">
-            <div className="info-box-title">⚠️ KYC 승인 팁</div>
-            <div className="info-box-content">
-              <ul>
-                <li>밝은 곳에서 고해상도로 촬영</li>
-                <li>신분증의 모든 텍스트가 선명하게 보여야 함</li>
-                <li>반사광이나 그림자가 없도록 주의</li>
-                <li>본인 정보와 신분증 정보가 100% 일치해야 함</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* 3단계: 입금 및 거래 시작 */}
-        <div className="guide-section">
-          <h2 className="section-title">
-            <span className="section-icon">💳</span>
-            3단계: 입금 및 거래 시작
-          </h2>
-          <div className="guide-steps">
-            <div className="guide-step">
-              <div className="step-number">1</div>
-              <div className="step-content">
-                <div className="step-title">입금 방법 선택</div>
-                <div className="step-description">
-                  신용카드, 은행 송금, 전자지갑 등 다양한 입금 방법을
-                  지원합니다. 한국에서는 신용카드가 가장 간편합니다.
-                </div>
-              </div>
-            </div>
-
-            <div className="guide-step">
-              <div className="step-number">2</div>
-              <div className="step-content">
-                <div className="step-title">최소 입금액 확인</div>
-                <div className="step-description">
-                  Vantage의 최소 입금액은 $50입니다. 처음에는 소액으로 시작하여
-                  플랫폼에 익숙해지는 것을 권장합니다.
-                </div>
-              </div>
-            </div>
-
-            <div className="guide-step">
-              <div className="step-number">3</div>
-              <div className="step-content">
-                <div className="step-title">MT4/MT5 플랫폼 설치</div>
-                <div className="step-description">
-                  PC 또는 모바일에 MetaTrader 플랫폼을 설치하고 계정 정보로
-                  로그인합니다.
-                </div>
-              </div>
-            </div>
-
-            <div className="guide-step">
-              <div className="step-number">4</div>
-              <div className="step-content">
-                <div className="step-title">거래 시작</div>
-                <div className="step-description">
-                  데모 계좌로 연습 후 실전 거래를 시작하세요. 테더베어의
-                  시그널과 지표를 활용하면 더욱 효과적입니다.
-                </div>
+            <div className="info-box">
+              <div className="info-box-title">💡 중요 안내</div>
+              <div className="info-box-content">
+                <ul>
+                  <li>테더베어 전용 링크로만 가입해야 페이백 혜택 적용</li>
+                  <li>이메일 인증을 완료해야 다음 단계 진행 가능</li>
+                  <li>비밀번호는 반드시 안전하게 보관하세요</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 4단계: 수수료 할인 적용 */}
+        {/* 🔥 2단계: KYC 인증 (아코디언) */}
         <div className="guide-section">
-          <h2 className="section-title">
-            <span className="section-icon">💰</span>
-            4단계: 수수료 할인 & 페이백 받기
-          </h2>
-          <div className="guide-steps">
-            <div className="guide-step">
-              <div className="step-number">1</div>
-              <div className="step-content">
-                <div className="step-title">테더베어 링크 확인</div>
-                <div className="step-description">
-                  테더베어 전용 링크로 가입했는지 확인합니다. 계정 설정에서 제휴
-                  코드를 확인할 수 있습니다.
+          <div
+            className="section-header"
+            onClick={() => toggleSection("step2")}
+          >
+            <h2 className="section-title">
+              <span className="section-icon"></span>
+              2단계: KYC 인증 (신원 확인)
+            </h2>
+            <span className={`toggle-icon ${openSections.step2 ? "open" : ""}`}>
+              ▼
+            </span>
+          </div>
+          <div
+            className={`section-content ${openSections.step2 ? "open" : ""}`}
+          >
+            <div className="guide-steps">
+              <div className="guide-step">
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <div className="step-title">개인정보 입력</div>
+                  <div className="step-description">
+                    실명, 생년월일, 국적, 주소 등 기본 정보를 정확하게
+                    입력합니다. 신분증과 정보가 일치해야 합니다.
+                  </div>
+                </div>
+              </div>
+
+              <div className="guide-step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <div className="step-title">신분증 업로드</div>
+                  <div className="step-description">
+                    주민등록증, 여권, 운전면허증 중 하나를 선택하여 앞/뒷면을
+                    선명하게 촬영 후 업로드합니다.
+                  </div>
+                </div>
+              </div>
+
+              <div className="guide-step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <div className="step-title">셀카 인증 (Liveness Check)</div>
+                  <div className="step-description">
+                    신분증을 손에 들고 얼굴과 함께 촬영합니다. 밝은 곳에서
+                    찍어야 승인률이 높습니다.
+                  </div>
+                </div>
+              </div>
+
+              <div className="guide-step">
+                <div className="step-number">4</div>
+                <div className="step-content">
+                  <div className="step-title">심사 대기 (1-24시간)</div>
+                  <div className="step-description">
+                    제출 후 보통 1-24시간 내에 승인 결과가 이메일로 전송됩니다.
+                    영업일 기준으로 처리됩니다.
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="guide-step">
-              <div className="step-number">2</div>
-              <div className="step-content">
-                <div className="step-title">거래 수수료 자동 할인</div>
-                <div className="step-description">
-                  테더베어 링크로 가입하면 거래 수수료가 자동으로 할인
-                  적용됩니다.
-                </div>
+            <div className="info-box">
+              <div className="info-box-title">⚠️ KYC 승인 팁</div>
+              <div className="info-box-content">
+                <ul>
+                  <li>밝은 곳에서 고해상도로 촬영</li>
+                  <li>신분증의 모든 텍스트가 선명하게 보여야 함</li>
+                  <li>반사광이나 그림자가 없도록 주의</li>
+                  <li>본인 정보와 신분증 정보가 100% 일치해야 함</li>
+                </ul>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className="guide-step">
-              <div className="step-number">3</div>
-              <div className="step-content">
-                <div className="step-title">페이백 신청</div>
-                <div className="step-description">
-                  매월 테더베어 팀에 페이백을 신청하면 거래량의 10%를 현금으로
-                  돌려받습니다.
+        {/* 🔥 3단계: 입금 및 거래 시작 (아코디언) */}
+        <div className="guide-section">
+          <div
+            className="section-header"
+            onClick={() => toggleSection("step3")}
+          >
+            <h2 className="section-title">
+              <span className="section-icon"></span>
+              3단계: 입금 및 거래 시작
+            </h2>
+            <span className={`toggle-icon ${openSections.step3 ? "open" : ""}`}>
+              ▼
+            </span>
+          </div>
+          <div
+            className={`section-content ${openSections.step3 ? "open" : ""}`}
+          >
+            <div className="guide-steps">
+              <div className="guide-step">
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <div className="step-title">입금 방법 선택</div>
+                  <div className="step-description">
+                    신용카드, 은행 송금, 전자지갑 등 다양한 입금 방법을
+                    지원합니다. 한국에서는 신용카드가 가장 간편합니다.
+                  </div>
+                </div>
+              </div>
+
+              <div className="guide-step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <div className="step-title">최소 입금액 확인</div>
+                  <div className="step-description">
+                    Vantage의 최소 입금액은 $50입니다. 처음에는 소액으로
+                    시작하여 플랫폼에 익숙해지는 것을 권장합니다.
+                  </div>
+                </div>
+              </div>
+
+              <div className="guide-step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <div className="step-title">MT4/MT5 플랫폼 설치</div>
+                  <div className="step-description">
+                    PC 또는 모바일에 MetaTrader 플랫폼을 설치하고 계정 정보로
+                    로그인합니다.
+                  </div>
+                </div>
+              </div>
+
+              <div className="guide-step">
+                <div className="step-number">4</div>
+                <div className="step-content">
+                  <div className="step-title">거래 시작</div>
+                  <div className="step-description">
+                    데모 계좌로 연습 후 실전 거래를 시작하세요. 테더베어의
+                    시그널과 지표를 활용하면 더욱 효과적입니다.
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="info-box">
-            <div className="info-box-title">🎁 페이백 혜택</div>
-            <div className="info-box-content">
-              <ul>
-                <li>거래 수수료의 10% 매월 페이백</li>
-                <li>누적 거래량에 따른 추가 보너스</li>
-                <li>VIP 회원 전용 이벤트 참여 기회</li>
-              </ul>
+        {/* 🔥 4단계: 수수료 할인 & 페이백 (아코디언) */}
+        <div className="guide-section">
+          <div
+            className="section-header"
+            onClick={() => toggleSection("step4")}
+          >
+            <h2 className="section-title">
+              <span className="section-icon"></span>
+              4단계: 수수료 할인 & 페이백 받기
+            </h2>
+            <span className={`toggle-icon ${openSections.step4 ? "open" : ""}`}>
+              ▼
+            </span>
+          </div>
+          <div
+            className={`section-content ${openSections.step4 ? "open" : ""}`}
+          >
+            <div className="guide-steps">
+              <div className="guide-step">
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <div className="step-title">테더베어 링크 확인</div>
+                  <div className="step-description">
+                    테더베어 전용 링크로 가입했는지 확인합니다. 계정 설정에서
+                    제휴 코드를 확인할 수 있습니다.
+                  </div>
+                </div>
+              </div>
+
+              <div className="guide-step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <div className="step-title">거래 수수료 자동 할인</div>
+                  <div className="step-description">
+                    테더베어 링크로 가입하면 거래 수수료가 자동으로 할인
+                    적용됩니다.
+                  </div>
+                </div>
+              </div>
+
+              <div className="guide-step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <div className="step-title">페이백 신청</div>
+                  <div className="step-description">
+                    매월 테더베어 팀에 페이백을 신청하면 거래량의 10%를 현금으로
+                    돌려받습니다.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="info-box">
+              <div className="info-box-title">🎁 페이백 혜택</div>
+              <div className="info-box-content">
+                <ul>
+                  <li>거래 수수료의 10% 매월 페이백</li>
+                  <li>누적 거래량에 따른 추가 보너스</li>
+                  <li>VIP 회원 전용 이벤트 참여 기회</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -641,31 +771,39 @@ const VantageGuide = () => {
         {/* 도움 및 문의 */}
         <div className="guide-section">
           <div className="contact-section">
-            <h3 className="contact-title">🤝 도움이 필요하신가요?</h3>
+            <h3 className="contact-title">💼 전문 컨설팅 서비스</h3>
+            <p className="contact-description">
+              가입부터 거래까지, 막히는 부분이 있으신가요?
+              <br />
+              테더베어는 원격 지원을 통해 1:1 맞춤 컨설팅을 제공합니다.
+              <br />
+              <strong>
+                KYC 인증, 입금 방법, 거래 설정까지 모든 과정을 함께
+                도와드립니다.
+              </strong>
+            </p>
             <div className="contact-methods">
-              <div className="contact-card">
-                <div className="contact-icon">📧</div>
-                <div className="contact-name">이메일</div>
-                <div className="contact-value">support@tetherbear.com</div>
-              </div>
-
-              <div className="contact-card">
+              <a
+                href="https://open.kakao.com/o/gCPFU2Xh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-card"
+              >
                 <div className="contact-icon">💬</div>
-                <div className="contact-name">카카오톡</div>
-                <div className="contact-value">@tetherbear</div>
-              </div>
+                <div className="contact-name">카카오톡 문의</div>
+                <div className="contact-value">실시간 상담</div>
+              </a>
 
-              <div className="contact-card">
+              <a
+                href="https://t.me/+KwZ79KOzTBthYzZl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-card"
+              >
                 <div className="contact-icon">📱</div>
-                <div className="contact-name">텔레그램</div>
-                <div className="contact-value">@tetherbear_official</div>
-              </div>
-
-              <div className="contact-card">
-                <div className="contact-icon">🎮</div>
-                <div className="contact-name">디스코드</div>
-                <div className="contact-value">TetherBear Community</div>
-              </div>
+                <div className="contact-name">텔레그램 문의</div>
+                <div className="contact-value">빠른 응대</div>
+              </a>
             </div>
           </div>
         </div>
@@ -675,10 +813,14 @@ const VantageGuide = () => {
           <h2 className="cta-title">지금 바로 Vantage에 가입하세요!</h2>
           <p className="cta-description">
             테더베어 전용 링크로 가입하고 10% 페이백 혜택을 받으세요
+            <br />
+            추천인 코드 : 8YxixZKq
+            <br />
+            <strong>기입하셔야 확인이 가능합니다</strong>
           </p>
           <div className="cta-buttons">
             <a
-              href="https://www.vantagemarkets.com/"
+              href="https://vigco.co/V73Mb2"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-button primary"
