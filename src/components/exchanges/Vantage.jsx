@@ -810,7 +810,7 @@ const VantageGuide = () => {
 
         {/* CTA 섹션 */}
         <div className="cta-section">
-          <h2 className="cta-title">지금 바로 Vantage에 가입하세요!</h2>
+          <h2 className="cta-title">지금 바로 Vantage에서 함께해요!</h2>
           <p className="cta-description">
             테더베어 전용 링크로 가입하고 10% 페이백 혜택을 받으세요
             <br />
