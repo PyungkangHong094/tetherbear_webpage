@@ -10,9 +10,10 @@ export const partnershipsData = {
       logo: "/images/partners/vantage.png",
       payback: "10%",
       discount: "0%",
-      totalPayback: "1,217,202 USDT",
+      totalPayback: "2,618,202 USDT",
       type: "exchange",
       badge: "최다 선택",
+      link: "/exchanges/vantage", // ✅ 내부 페이지로 이동
     },
     {
       id: "avatrade",
@@ -23,6 +24,7 @@ export const partnershipsData = {
       discount: "0%",
       totalPayback: "2,618,202 USDT",
       type: "exchange",
+      link: "/exchanges/avatrade", // ✅ 내부 페이지로 이동
     },
     {
       id: "axi",
@@ -31,8 +33,9 @@ export const partnershipsData = {
       logo: "/images/partners/axi.png",
       payback: "10%",
       discount: "0%",
-      totalPayback: "618,202 USDT",
+      totalPayback: "2,618,202 USDT",
       type: "exchange",
+      link: "/exchanges/axi", // ✅ 내부 페이지로 이동
     },
   ],
 
@@ -45,9 +48,10 @@ export const partnershipsData = {
       logo: "/images/partners/binance.png",
       payback: "20%",
       discount: "20%",
-      totalPayback: "31,618,202 USDT",
+      totalPayback: "2,618,202 USDT",
       type: "exchange",
       badge: "상위 거래소",
+      link: "/exchanges/binance", // ✅ 내부 페이지로 이동
     },
     {
       id: "okx",
@@ -56,20 +60,11 @@ export const partnershipsData = {
       logo: "/images/partners/okx.png",
       payback: "40%",
       discount: "20%",
-      totalPayback: "22,540,216 USDT",
+      totalPayback: "2,500,000 USDT",
       type: "exchange",
       badge: "최다 선택",
+      link: "/exchanges/okx", // ✅ 내부 페이지로 이동
     },
-    // {
-    //   id: "bitget",
-    //   name: "Bitget",
-    //   nameKo: "빗겟",
-    //   logo: "/images/partners/bitget.png",
-    //   payback: "50%",
-    //   discount: "50%",
-    //   totalPayback: "2,836,920 USDT",
-    //   type: "exchange",
-    // },
     {
       id: "bybit",
       name: "Bybit",
@@ -79,19 +74,8 @@ export const partnershipsData = {
       discount: "20%",
       totalPayback: "2,779,715 USDT",
       type: "exchange",
+      link: "/exchanges/bybit", // ✅ 내부 페이지로 이동
     },
-
-    // {
-    //   id: "gate",
-    //   name: "Gate",
-    //   nameKo: "게이트",
-    //   logo: "/images/partners/gate.png",
-    //   payback: "75%",
-    //   discount: "0%",
-    //   totalPayback: "2,300,709 USDT",
-    //   type: "exchange",
-    //   badge: "최대 혜택",
-    // },
   ],
 
   // ✅ 파트너 플랫폼
@@ -121,7 +105,7 @@ export const partnershipsData = {
 
 // 카테고리 제목
 export const categoryTitles = {
-  forex: "Forex 파트너십 혜택",
+  forex: "FOREX 파트너십 혜택",
   crypto: "암호화폐 파트너십 혜택",
   platform: "파트너 플랫폼",
 };

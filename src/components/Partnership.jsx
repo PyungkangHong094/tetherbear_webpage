@@ -1,13 +1,14 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ 추가
 import Navbar from "./Navbar";
-// import Footer from "./Footer";
 import "../styles/webflow.css";
 import "../styles/tjidajfi.webflow.css";
 import { partnershipsData, categoryTitles } from "../data/partnershipsData";
 import { partnershipStyles } from "../styles/partnershipStyles";
 
 function Partnership() {
-  // URL 쿼리(?tab=crypto) → 초기 탭 동기화
+  const navigate = useNavigate(); // ✅ React Router 사용
+
   const initialTab = useMemo(() => {
     const params = new URLSearchParams(window.location.search);
     const t = params.get("tab");
@@ -16,7 +17,6 @@ function Partnership() {
 
   const [activeTab, setActiveTab] = useState(initialTab);
 
-  // 탭 변경 시 URL 쿼리 갱신(공유/새로고침 유지)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     params.set("tab", activeTab);
@@ -32,12 +32,23 @@ function Partnership() {
       className="partner-row"
       role="listitem"
       tabIndex={0}
-      onClick={() =>
-        p.link && window.open(p.link, "_blank", "noopener,noreferrer")
-      }
+      onClick={() => {
+        // ✅ 내부 링크는 navigate 사용, 외부 링크는 window.open 사용
+        if (p.link) {
+          if (p.link.startsWith("http")) {
+            window.open(p.link, "_blank", "noopener,noreferrer");
+          } else {
+            navigate(p.link); // ✅ 내부 페이지로 이동
+          }
+        }
+      }}
       onKeyDown={(e) => {
         if ((e.key === "Enter" || e.key === " ") && p.link) {
-          window.open(p.link, "_blank", "noopener,noreferrer");
+          if (p.link.startsWith("http")) {
+            window.open(p.link, "_blank", "noopener,noreferrer");
+          } else {
+            navigate(p.link);
+          }
         }
       }}
     >
@@ -161,7 +172,6 @@ function Partnership() {
             </p>
 
             <div className="process-flow">
-              {/* 왼쪽: 거래소 */}
               <div className="process-node">
                 <div className="process-circle">
                   <div className="process-label">
@@ -174,7 +184,6 @@ function Partnership() {
 
               <div className="process-arrow"></div>
 
-              {/* 중앙: 테더베어 서비스 - 2-3-4-3-2 피라미드 */}
               <div className="process-center">
                 <div className="benefit-row">
                   <div className="benefit-tag">📊 차트 보는법</div>
@@ -188,7 +197,7 @@ function Partnership() {
                 </div>
 
                 <div className="benefit-row">
-                  <div className="benefit-tag">🔍 시장 분석</div>
+                  <div className="benefit-tag">📝 시장 분석</div>
                   <div className="benefit-tag">💡 트레이딩 콘텐츠</div>
                   <div className="benefit-tag">🛠️ 문제 해결</div>
                   <div className="benefit-tag">📱 맞춤 이벤트</div>
@@ -208,7 +217,6 @@ function Partnership() {
 
               <div className="process-arrow"></div>
 
-              {/* 오른쪽: 트레이더 */}
               <div className="process-node">
                 <div className="process-circle">
                   <div className="process-label">
@@ -262,8 +270,6 @@ function Partnership() {
           </div>
         </div>
       </div>
-
-      {/* <Footer /> */}
     </div>
   );
 }
