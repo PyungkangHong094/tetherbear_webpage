@@ -90,7 +90,6 @@ export const partnershipsData = {
         "https://play.google.com/store/apps/details?id=com.chartq.app",
       appStore: "https://apps.apple.com/kr/app/chartq/id6740187028",
       type: "platform",
-      link: "https://chartq.app/",
     },
     {
       id: "tradingview",
