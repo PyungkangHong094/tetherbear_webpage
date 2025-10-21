@@ -463,7 +463,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="stage-description-column">
-                    <h3 className="h3-small">트레이딩뷰 가입</h3>
+                    <h3 className="h3-small">파트너십 가입</h3>
                     <p className="progress-bar-p">
                       파트너십 가입을 우선적으로 하셔야합니다. 링크 통해서
                       가입하시거나 가입이 어려우신 경우
