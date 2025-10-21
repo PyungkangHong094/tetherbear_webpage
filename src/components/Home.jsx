@@ -500,7 +500,7 @@ const Home = () => {
                       >
                         <div className="glow-border"></div>
                         <div className="button-inner smaller">
-                          <p>트레이딩뷰</p>
+                          <p>트레이딩뷰 제공받기</p>
                         </div>
                       </a>
                       <div className="button-glow-2"></div>
