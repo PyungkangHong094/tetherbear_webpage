@@ -817,8 +817,9 @@ const AvaTradeGuide = () => {
           <h2 className="cta-title">지금 바로 AvaTrade에서 함께해요!</h2>
           <p className="cta-description">
             테더베어 전용 링크로 가입하고 10% 페이백 혜택을 받으세요
+            <br />
+            <strong>추천인 코드 : 215986</strong>
           </p>
-          <strong>추천인 코드 : 215986</strong>
 
           <div className="cta-buttons">
             <a
