@@ -5,7 +5,7 @@ import "../styles/webflow.css";
 import "../styles/tjidajfi.webflow.css";
 import { partnershipsData, categoryTitles } from "../data/partnershipsData";
 import { partnershipStyles } from "../styles/partnershipStyles";
-
+import RealtimeWinnersFeed from "./RealtimeWinnersFeed";
 function Partnership() {
   const navigate = useNavigate(); // ✅ React Router 사용
 
@@ -270,6 +270,7 @@ function Partnership() {
           </div>
         </div>
       </div>
+      <RealtimeWinnersFeed maxVisible={3} />
     </div>
   );
 }
