@@ -58,7 +58,7 @@ const RealtimeWinnersFeed = ({ maxVisible = 4 }) => {
 
     // 5-6초마다 새로운 당첨자 추가
     const interval = setInterval(() => {
-      const randomDelay = 5000 + Math.random() * 1000; // 5~6초
+      const randomDelay = 6500 + Math.random() * 1000; // 5~6초
 
       setTimeout(() => {
         const newWinner = {
