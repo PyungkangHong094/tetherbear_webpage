@@ -2,9 +2,14 @@
 
 TetherBear의 공식 웹사이트 프로젝트입니다. 기존 HTML/CSS/JavaScript로 작성된 정적 웹사이트를 React 기반의 SPA(Single Page Application)로 마이그레이션했습니다.
 
-## 🚀 프로젝트 개요
+## 🚀 팀원
 
-이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)을 기반으로 제작되었으며, Webflow로 디자인된 웹사이트를 React 컴포넌트로 변환한 프로젝트입니다.
+- 최혜민
+- 김다예
+- 김승우
+- 이한재
+- 추성민
+- 홍평강
 
 ### 주요 변경사항
 
@@ -52,6 +57,7 @@ npm start
 > 💡 **주의**: 이 프로젝트는 `npm run dev`가 **아닌** `npm start` 명령어를 사용합니다!
 
 **실행 후:**
+
 - 브라우저가 자동으로 열립니다
 - 주소: [http://localhost:3000](http://localhost:3000)
 - 파일 변경 시 자동으로 새로고침됩니다
@@ -91,7 +97,6 @@ npm start
 # ✅ 브라우저에서 http://localhost:3000 자동 열림
 ```
 
-
 ## ⚠️ 알려진 이슈 및 수정 필요 사항
 
 ### 1. Home 페이지 화살표 버튼 애니메이션 미구현
@@ -101,19 +106,20 @@ npm start
 **원인**: Webflow의 애니메이션 라이브러리(`webflow.js`)가 React 환경에서 호환되지 않음
 
 **해결 방법**:
+
 - React 기반 애니메이션 라이브러리로 재구현 필요
 - 추천 라이브러리: `framer-motion`, `react-spring`, `GSAP`
 
 ```jsx
 // 예시: framer-motion 사용
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 <motion.div
   animate={{ y: [0, 10, 0] }}
   transition={{ repeat: Infinity, duration: 1.5 }}
 >
   {/* 화살표 아이콘 */}
-</motion.div>
+</motion.div>;
 ```
 
 ### 2. Factory2 Function 에러
@@ -122,10 +128,12 @@ import { motion } from 'framer-motion';
 
 **원인**: `webflow.js`가 React의 모듈 시스템과 충돌
 
-**임시 해결책**: 
+**임시 해결책**:
+
 - 현재 `webflow.js` 로딩을 제거한 상태
 - Webflow 애니메이션이 필요한 부분은 React 네이티브 방식으로 재구현 필요
 
 **장기 해결책**:
+
 - Webflow의 모든 인터랙션을 React 컴포넌트로 재작성
 - CSS 애니메이션 또는 JavaScript 애니메이션 라이브러리 사용
