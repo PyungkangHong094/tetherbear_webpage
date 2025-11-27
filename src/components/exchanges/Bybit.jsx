@@ -511,7 +511,7 @@ const BybitGuide = () => {
             <div className="guide-steps">
               <div
                 className="guide-step"
-                onClick={() => window.open("https://www.bybit.com/", "_blank")}
+                onClick={() => window.open("https://partner.bybit.com/b/98686", "_blank")}
                 style={{ cursor: "pointer" }}
               >
                 <div className="step-number">1</div>
@@ -845,7 +845,7 @@ const BybitGuide = () => {
           </p>
           <div className="cta-buttons">
             <a
-              href="https://www.bybit.com/"
+              href="https://partner.bybit.com/b/98686"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-button primary"
